@@ -110,10 +110,10 @@ jobs:
                       echo "EMAIL_ADDRESS secret is not set, please refer to the README.md for more information. Exiting."
                       exit 1
                   fi
-                  if [[ (-z "${{ github.event.inputs.wifi_ssid }}" || -z "${{ github.event.inputs.wifi_password }}") && ( -z "${{ secrets.ENTNETWORK_SSID }}" || -z "${{ secrets.ENTNETWORK_IDENTITY }}" || -z "${{ secrets.ENTNETWORK_PASSWORD }}" ) ]]; then
-                      echo "Please ensure that all required secrets (ENTNETWORK_SSID, ENTNETWORK_IDENTITY, and ENTNETWORK_PASSWORD) are set for the enterprise network. If you do not want to connect to an enterprise network, please provide information for the home network. Exiting."
-                      exit 1
-                  fi
+                  # if [[ (-z "${{ github.event.inputs.wifi_ssid }}" || -z "${{ github.event.inputs.wifi_password }}") && ( -z "${{ secrets.ENTNETWORK_SSID }}" || -z "${{ secrets.ENTNETWORK_IDENTITY }}" || -z "${{ secrets.ENTNETWORK_PASSWORD }}" ) ]]; then
+                  #     echo "Please ensure that all required secrets (ENTNETWORK_SSID, ENTNETWORK_IDENTITY, and ENTNETWORK_PASSWORD) are set for the enterprise network. If you do not want to connect to an enterprise network, please provide information for the home network. Exiting."
+                  #     exit 1
+                  # fi
             - uses: actions/checkout@v4
               with:
                   submodules: recursive
